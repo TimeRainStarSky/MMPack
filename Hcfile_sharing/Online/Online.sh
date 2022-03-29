@@ -1,12 +1,12 @@
-ONLINEVERSION=202203290
-ONLINENAME="2022-03-29-1"
+ONLINEVERSION=202203291
+ONLINENAME="2022-03-29-2"
 RULES="
 #系统
 [模块详细|配置|根路径/Android/Hcfile_sharing]
 [系统|下载|根路径/Download]
 [系统|相册|根路径/DCIM]
 [系统|音乐|根路径/Music]
-[系统|图片|根路径/sdcard/Pictures]
+[系统|图片|根路径/Pictures]
 
 #QQ
 [QQ目录|下载|应用数据路径/com.tencent.mobileqq/Tencent/QQfile_recv]
