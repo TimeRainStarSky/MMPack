@@ -1,7 +1,7 @@
 R="[1;31m";G="[1;32m";Y="[1;33m";C="[1;36m";B="[1;m";O="[m";abort(){ echo "
-$R! $@$O";exit 1;};echo "$B*************************
+$R! $@$O";exit 1;};echo "$B—————————————————————————
 $R Shell$Y Script$G Pack$C Tools$O
-*************************
+—————————————————————————
     ${G}作者：${C}时雨🌌星空$O";[ -d "${1}Pack" ]&&[ -f "${1}Pack.sh" ]&&INPUT="$(realpath "$1")"||abort "输入文件不存在";[ -n "$2" ]&&OUTPUT="$(realpath "$2")"&&DIROUTPUT="$(dirname "$OUTPUT")"&&BASEOUTPUT="$(basename "$OUTPUT")"||abort "输出文件不存在";command -v shc>/dev/null||abort "shc编译器不存在";echo "
 $Y- 正在使用shc编译脚本$O
 ";shc -vrf "${1}Pack.sh"&&shc -vrf "${1}Control.sh"||abort "脚本编译失败";echo "
