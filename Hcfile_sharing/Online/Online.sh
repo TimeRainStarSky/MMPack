@@ -38,14 +38,12 @@ offline() {
   内核版本：$(uname -r)
   面具版本：$(magisk -c)
 
-- 正在写入在线规则
-"
-	echolog "$RULE"
+- 正在写入在线规则"
+	echolog "$RULES"
 	sed -i '/在线规则：/,$d' "$CONF"
 	echo -n "在线规则：
 ————————————————————————$RULES————————————————————————" >>"$CONF"
-	echolog "
-- 写入完成，用时：$(expr "$(date +%s)" - "$(date -d "$DATE" +%s)")秒"
+	echolog "- 写入完成，用时：$(expr "$(date +%s)" - "$(date -d "$DATE" +%s)")秒"
 	mount_file
 }
 abort_update() {
