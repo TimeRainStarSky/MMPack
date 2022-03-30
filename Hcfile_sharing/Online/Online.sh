@@ -1,5 +1,5 @@
-ONLINEVERSION=202203291
-ONLINENAME="2022-03-29-2"
+ONLINEVERSION=202203300
+ONLINENAME="2022-03-30-1"
 RULES="
 #系统
 [模块详细|配置|根路径/Android/Hcfile_sharing]
@@ -9,27 +9,29 @@ RULES="
 [系统|图片|根路径/Pictures]
 
 #QQ
-[QQ目录|下载|应用数据路径/com.tencent.mobileqq/Tencent/QQfile_recv]
-[QQ目录|图片|应用数据路径/com.tencent.mobileqq/Tencent/QQ_Images]
-[QQ目录|保存图片|根路径/tencent/qq_images]
-[QQ目录|保存视频|根路径/tencent/QQ_Video]
+[QQ|下载|应用数据路径/com.tencent.mobileqq/Tencent/QQfile_recv]
+[QQ|下载2|根路径/Tencent/QQfile_recv]
+[QQ|图片|应用数据路径/com.tencent.mobileqq/Tencent/QQ_Images]
+[QQ|保存图片|根路径/tencent/qq_images]
+[QQ|保存视频|根路径/tencent/QQ_Video]
 
 #TIM 贡献：845158117
-[TIM目录|下载|根路径/Tencent/TIMfile_recv]
-[TIM目录|图片|根路径/Tencent/Tim_Images]
+[TIM|下载|根路径/Tencent/TIMfile_recv]
+[TIM|图片|根路径/Tencent/Tim_Images]
 
 #微信
-[微信|微信下载|根路径/tencent/MicroMsg/Download]
-[微信|微信下载2|应用数据路径/com.tencent.mm/MicroMsg/Download]
+[微信|下载|应用数据路径/com.tencent.mm/MicroMsg/Download]
+[微信|下载2|根路径/tencent/MicroMsg/Download]
 
 #官方电报
-[电报|保存视频|应用数据路径/org.telegram.messenger.web/files/Telegram/Telegram Video]
-[电报|保存图片|应用数据路径/org.telegram.messenger.web/files/Telegram/Telegram Images]
-[电报|下载|应用数据路径/org.telegram.messenger.web/files/Telegram/Telegram Documents]
-[电报|保存音频|应用数据路径/org.telegram.messenger.web/files/Telegram/Telegram Audio]
+[电报|视频|应用数据路径/org.telegram.messenger.web/files/Telegram/Telegram Video]
+[电报|图片|应用数据路径/org.telegram.messenger.web/files/Telegram/Telegram Images]
+[电报|文件|应用数据路径/org.telegram.messenger.web/files/Telegram/Telegram Documents]
+[电报|音频|应用数据路径/org.telegram.messenger.web/files/Telegram/Telegram Audio]
 
 #云盘下载
 [云盘|百度云|根路径/BaiduNetdisk]
+[云盘|百度云缓存|应用数据路径/com.baidu.netdisk/cache/preview/BaiduNetdisk/]
 [云盘|阿里云盘|根路径/AliYunPan]
 [云盘|天翼云盘|根路径/ecloud]
 [云盘|腾讯微云|根路径/微云保存的文件]
@@ -44,11 +46,13 @@ RULES="
 [迅雷|迅雷下载|应用数据路径/com.xunlei.downloadprovider/files/ThunderDownload]
 
 #浏览器
-[夸克浏览器|夸克下载|根路径/Quark/Download]
-[夸克浏览器|夸克下载2|根路径/quark/download]
-[UC浏览器|UC下载|根路径/UCDownloads]
-[UC浏览器|UC下载2|根路径/UCTurbo/Download]
-[X浏览器|X下载|应用数据路径/com.mmbox.xbrowser/files/downloads]
+[浏览器|Chrome|应用数据路径/com.android.chrome/files/Download]
+[浏览器|夸克|根路径/Quark/Download]
+[浏览器|夸克2|根路径/quark/download]
+[浏览器|UC|根路径/UCDownloads]
+[浏览器|UC2|根路径/UCTurbo/Download]
+[浏览器|X|应用数据路径/com.mmbox.xbrowser/files/downloads]
+[浏览器|QQ/根路径/QQBrowser]
 
 #网易云
 [网易云音乐|歌曲|根路径/netease/cloudmusic/Music]
@@ -70,6 +74,9 @@ RULES="
 #好游快爆
 [好游快爆|游戏安装包|根路径/Android/data/com.xmcy.hykb/files/HYKB/bazaar]
 [好游快爆|本体升级包|根路径/Android/data/com.xmcy.hykb/files/HYKB/version]
+
+#豌豆荚 贡献：2495945382
+[豌豆荚|安装包|根路径/wandoujia/downloader/apk]
 "
 echolog() { echo "$@" >>"$ANDROIDH/在线规则日志.log"; }
 [ -f "$ANDROIDH/在线规则日志.log" ] && mv "$ANDROIDH/在线规则日志.log" "$ANDROIDH/在线规则日志.log.old"
