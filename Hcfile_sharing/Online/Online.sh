@@ -1,5 +1,5 @@
-ONLINEVERSION=202203300
-ONLINENAME="2022-03-30-1"
+ONLINEVERSION=202203310
+ONLINENAME="2022-03-31-1"
 RULES="
 #系统
 [模块详细|配置|根路径/Android/Hcfile_sharing]
@@ -59,10 +59,6 @@ RULES="
 [网易云音乐|MV|根路径/netease/cloudmusic/MV]
 [网易云音乐|音乐相册|根路径/netease/cloudmusic/网易云音乐相册]
 
-#酷狗音乐
-[酷狗音乐|歌曲|根路径/kgmusic/download]
-[酷狗音乐|MV|根路径/kugou/mv]
-
 #QQ音乐
 [QQ音乐|歌曲|根路径/qqmusic/song]
 [QQ音乐|MV|根路径/qqmusic/mv]
@@ -70,6 +66,9 @@ RULES="
 #酷狗音乐
 [酷狗音乐|歌曲|根路径/kgmusic/download]
 [酷狗音乐|MV|根路径/kugou/mv]
+
+#酷我音乐 贡献：2368801591
+[酷我音乐|歌曲|根路径/KuwoMusic/music]
 
 #好游快爆
 [好游快爆|游戏安装包|根路径/Android/data/com.xmcy.hykb/files/HYKB/bazaar]
