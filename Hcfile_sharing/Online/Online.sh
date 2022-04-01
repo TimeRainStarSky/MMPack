@@ -1,6 +1,10 @@
-ONLINEVERSION=202203310
-ONLINENAME="2022-03-31-1"
+ONLINEVERSION=202204010
+ONLINENAME="2022-04-01-1"
 RULES="
+#贡献云端规则，联系：
+#QQ：2536554304
+#酷安：时雨丶星空
+
 #系统
 [模块详细|配置|根路径/Android/Hcfile_sharing]
 [系统|下载|根路径/Download]

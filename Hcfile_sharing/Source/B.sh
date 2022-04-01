@@ -51,7 +51,10 @@ mount_file() {
 	sed -i "s/运行状态：.*/运行状态：/g" "$MODDIR/module.prop"
 	echo -n "[$(date "+%F %X")] | [配置路径：$CONF] | [挂载路径：$DATAMEDIAB/$USBPATH] | [在线规则：$([ "$ONLINERULE" = "开启" ] && echo "$ONLINENAME" || echo "关闭")] | [挂载成功]" >>"$MODDIR/module.prop"
 	[ -d "$DATAMEDIA/$USBPATH/模块详细" ] || mkdir -p "$DATAMEDIA/$USBPATH/模块详细"
-	echo -n "/data/adb/magisk/busybox sh $MODDIR/B.sh nosleep" >"$DATAMEDIA/$USBPATH/模块详细/更新目录.sh"
+	echo -n "echo -n '正在更新……'
+/data/adb/magisk/busybox sh '$MODDIR/B.sh' nosleep
+echo '更新完成
+注意：只能在当前应用查看更新，需要其他应用也显示更新，请重启设备'" >"$DATAMEDIA/$USBPATH/模块详细/更新目录.sh"
 	echo -n 'am start -a android.intent.action.VIEW -d "mqqapi://card/show_pslcard?src_type=internal&version=1&uin=714492958&card_type=group"' >"$DATAMEDIA/$USBPATH/模块详细/加入反馈群.sh"
 	echo -n 'am start -d "coolmarket://u/2650948"' >"$DATAMEDIA/$USBPATH/模块详细/酷安查看时雨丶星空.sh"
 	echo -n 'am start -d "coolmarket://u/3712243"' >"$DATAMEDIA/$USBPATH/模块详细/酷安查看火柴.sh"
