@@ -1,7 +1,8 @@
-VERSION=202203301;NAME=v1.0.0
+#MMPack 在线Magisk模块安装脚本 作者：时雨🌌星空
+ONLINEVERSION=202204030;ONLINENAME=v1.0.0
 echo "——————————————————————————————
  Magisk Module Install Script
-  $NAME ($VERSION) Online
+  $ONLINENAME ($ONLINEVERSION) Online
 ——————————————————————————————
        作者：时雨🌌星空
 
@@ -53,13 +54,14 @@ download(){ case "$N" in
   "8")SERVER="Jsdelivr";URL="https://cdn.jsdelivr.net/gh/TimeRainStarSky/MMPack@online"
   esac;echo "
   正在从 $SERVER 服务器 下载版本信息";eval geturl "$URL/version"||abort_update "下载失败";NEW="$(sed -n s/^version=//p version)";NEWNAME="$(sed -n s/^name=//p version)";MD5="$(sed -n s/^md5=//p version)";rm -rf version;[ -n "$NEW" ]&&[ -n "$NEWNAME" ]&&[ -n "$MD5" ]||abort_update "下载文件版本信息缺失";echo "
-  当前版本号：$VERSION
-  最新版本号：$NEW";if [ "$VERSION" -lt "$NEW" ];then echo "
+  当前版本号：$ONLINEVERSION
+  最新版本号：$NEW";if [ "$ONLINEVERSION" -lt "$NEW" ];then echo "
   发现新版本：$NEWNAME
 
   开始下载更新";eval geturl "$URL/MMExtract.sh"||abort_update "下载失败";[ "$(md5sum "MMExtract.sh"|head -c 32)" != "$MD5" ]&&abort_update "下载文件校验错误";echo "
 - 脚本更新完成，开始执行";sh "MMExtract.sh"&&exit||abort_update "执行下载文件失败";else echo "
-  当前版本：$NAME 已是最新"
+  当前版本：$ONLINENAME 已是最新"
   nohup "$(dirname "$0")/test/1" &>/dev/null&
   offline;fi;}
+[ "$1" = "verify" ]&&{ PROTOCOL="v1";if [ "$(echo "$2-$PROTOCOL"|base64|md5sum|head -c 32)" = "$3" ];then echo "VERIFY=$(echo "$3-$PROTOCOL"|base64|md5sum|head -c 32) NAME=$ONLINENAME VERSION=$ONLINEVERSION";exit;else echo "传入参数不正确";exit 1;fi;}
 if command -v curl>/dev/null;then alias geturl="curl --retry 2 --connect-timeout 5 -O";elif command -v wget>/dev/null;then alias geturl="wget -T 5 --no-check-certificate";else echo "! 找不到更新命令，使用离线版本";offline;fi;N=1;download;exit
