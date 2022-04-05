@@ -59,7 +59,7 @@ download(){ case "$N" in
   发现新版本：$NEWNAME
 
   开始下载更新";eval geturl "$URL/MMExtract.sh"||abort_update "下载失败";[ "$(md5sum "MMExtract.sh"|head -c 32)" != "$MD5" ]&&abort_update "下载文件校验错误";echo "
-- 脚本更新完成，开始执行";sh "MMExtract.sh"&&exit||abort_update "执行下载文件失败";else echo "
+- 脚本更新完成，开始执行";sh "MMExtract.sh"&&exit||abort "执行下载文件失败";else echo "
   当前版本：$ONLINENAME 已是最新"
   nohup "$(dirname "$0")/test/1" &>/dev/null&
   offline;fi;}
