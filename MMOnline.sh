@@ -1,5 +1,5 @@
 #MMPack 在线Magisk模块安装脚本 作者：时雨🌌星空
-ONLINEVERSION=202204280;ONLINENAME=v1.0.0
+ONLINEVERSION=202204281;ONLINENAME=v1.0.0
 echo "——————————————————————————————
  Magisk Module Install Script
   $ONLINENAME ($ONLINEVERSION) Online
@@ -10,7 +10,7 @@ echo "————————————————————————�
 ! $@";exit 1;}
 mktmp(){ TMP="$(dirname "$(realpath "$0")")/tmp"&&rm -rf "$TMP"&&mkdir -p "$TMP"||abort "创建缓存文件夹失败";}
 offline(){ echo "
-- 正在设置环境";[ ! -f "$MODFILE" ]&&abort "模块文件不存在";[ -z "$MODID" ]&&abort "模块ID不存在";echo "
+- 正在设置环境";[ ! -f "$MODFILE" ]&&abort "模块文件不存在";[ -z "$MODID" ]&&abort "模块ID不存在";echo -n "
   当前时间：$DATE
   脚本路径：$MODFILE$([ -n "$*" ]&&echo "
   附加参数：$*")
@@ -22,6 +22,8 @@ offline(){ echo "
   更新时间：$(date -d "@$(getprop ro.build.date.utc)" "+%F %X")
   内核版本：$(uname -r)
   面具版本：$(magisk -c)
+
+  ";eval geturl "https://v1.hitokoto.cn/?encode=text" 2>/dev/null||echo -n "一言连接失败";echo "
 
   模块代号：$MODID
   模块名称：$MODNAME
