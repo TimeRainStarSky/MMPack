@@ -11,9 +11,9 @@ DATAMEDIABC='/data/media/0
 /storage/emulated/0'
 ANDROIDH="$DATAMEDIA/Android/Hcfile_sharing"
 CONF="$ANDROIDH/配置文件.conf"
-[ "$1" != "nosleep" ] && {
+[ "$1" = "nosleep" ] || {
 	DELAY="$(sed '/^延迟时间=/!d;s/.*=//;s/ #.*//' "$CONF")"
-	[ "$DELAY" -ge 0 ] &>/dev/null && sleep "$DELAY"
+	[ -n "$DELAY" ]&&[ "$DELAY" -ge 0 ] &>/dev/null && sleep "$DELAY"
 }
 SUOPATH="$(sed '/^锁定文件权限=/!d;s/.*=//;s/ #.*//' "$CONF")"
 USBPATH="$(sed '/^根文件夹=/!d;s/.*=//;s/ #.*//' "$CONF")"

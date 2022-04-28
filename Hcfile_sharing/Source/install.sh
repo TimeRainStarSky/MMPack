@@ -7,11 +7,11 @@ ONLINERULE="$(sed '/^在线规则=/!d;s/.*=//;s/ #.*//' "$CONF")"
 NOMEDIA="$(sed '/^媒体扫描=/!d;s/.*=//;s/ #.*//' "$CONF")"
 SUOPATH="$(sed '/^锁定文件权限=/!d;s/.*=//;s/ #.*//' "$CONF")"
 mv -f "$CONF" "$CONF.bak";}||{ mkdir -p "$CONFIGDIR";}
-[ -z "$USBPATH" ]&&USBPATH="共享目录"
-[ "$DELAY" -ge 0 ]&>/dev/null||DELAY="30"
-[ "$ONLINERULE" != "开启" ]&&[ "$ONLINERULE" != "关闭" ]&&ONLINERULE="开启"
-[ "$NOMEDIA" != "开启" ]&&[ "$NOMEDIA" != "关闭" ]&&NOMEDIA="关闭"
-[ "$SUOPATH" != "开启" ]&&[ "$SUOPATH" != "关闭" ]&&SUOPATH="开启"
+[ -n "$USBPATH" ]||USBPATH="共享目录"
+[ -n "$DELAY" ]&&[ "$DELAY" -ge 0 ] &>/dev/null||DELAY="30"
+[ "$ONLINERULE" = "开启" ]||[ "$ONLINERULE" = "关闭" ]||ONLINERULE="开启"
+[ "$NOMEDIA" = "开启" ]||[ "$NOMEDIA" = "关闭" ]||NOMEDIA="关闭"
+[ "$SUOPATH" = "开启" ]||[ "$SUOPATH" = "关闭" ]||SUOPATH="开启"
 echo '————————————————————————
 文件定向挂载 作者：HChai && 时雨🌌星空 配置文件
 ————————————————————————
