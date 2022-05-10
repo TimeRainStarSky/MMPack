@@ -1,5 +1,5 @@
 #MMPack 在线Magisk模块安装脚本 作者：时雨🌌星空
-ONLINEVERSION=202204302;ONLINENAME=v1.0.0
+ONLINEVERSION=202205100;ONLINENAME=v1.0.0
 echo "——————————————————————————————
  Magisk Module Install Script
   $ONLINENAME ($ONLINEVERSION) Online
@@ -15,7 +15,7 @@ offline(){ echo "
   脚本路径：$MODFILE$([ -n "$*" ]&&echo "
   附加参数：$*")
   设备代号：$(getprop ro.product.device)
-  设备型号：$(getprop ro.product.marketname)
+  设备型号：$(getprop ro.product.marketname) ($(getprop ro.product.name))
   认证型号：$(getprop ro.product.model)
   安卓版本：$(getprop ro.build.version.release) (SDK $(getprop ro.build.version.sdk))
   系统版本：$(getprop ro.build.version.incremental) ($(getprop ro.build.display.id))
