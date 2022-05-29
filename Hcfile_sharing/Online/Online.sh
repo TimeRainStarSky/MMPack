@@ -1,5 +1,5 @@
-ONLINEVERSION=202204011
-ONLINENAME="2022-04-01-1"
+ONLINEVERSION=202205290
+ONLINENAME="2022-05-29-1"
 RULES="
 #贡献在线规则，联系：
 #QQ：2536554304
@@ -39,6 +39,11 @@ RULES="
 [云盘|阿里云盘|根路径/AliYunPan]
 [云盘|天翼云盘|根路径/ecloud]
 [云盘|腾讯微云|根路径/微云保存的文件]
+[云盘|曲奇盘|根路径/quqi/pan/download]
+[云盘|和彩云网盘|根路径/M_Cloud/download]
+[云盘|文叔叔|根路径/Wenshushu/Download]#大白云
+[云盘|大白云|根路径/大白·Cloud]
+[云盘|磁力云|根路径/happy.cloud]
 
 #钉钉
 [钉钉|钉钉文件|根路径/DingTalk]
@@ -56,7 +61,10 @@ RULES="
 [浏览器|UC|根路径/UCDownloads]
 [浏览器|UC2|根路径/UCTurbo/Download]
 [浏览器|X|应用数据路径/com.mmbox.xbrowser/files/downloads]
-[浏览器|QQ/根路径/QQBrowser]
+[浏览器|QQ|根路径/QQBrowser]
+[浏览器|360|根路径/360Browser/download]
+[浏览器|360极速|根路径/360LiteBrowser/download]
+[浏览器|QQ极速版|根路径/tencent/QQfile_recv]
 
 #网易云
 [网易云音乐|歌曲|根路径/netease/cloudmusic/Music]
@@ -73,6 +81,7 @@ RULES="
 
 #酷我音乐 贡献：2368801591
 [酷我音乐|歌曲|根路径/KuwoMusic/music]
+[酷我音乐|MV|根路径/KuwoMusic/mvDownload]
 
 #好游快爆
 [好游快爆|游戏安装包|根路径/Android/data/com.xmcy.hykb/files/HYKB/bazaar]
@@ -80,6 +89,39 @@ RULES="
 
 #豌豆荚 贡献：2495945382
 [豌豆荚|安装包|根路径/wandoujia/downloader/apk]
+
+#TapTap
+[TapTap|下载|应用数据路径/com.taptap/files/Download]
+
+#小米互传
+[小米互传|下载|根路径/mishare]
+
+#DJ多多
+[DJ多多|歌曲|根路径/DJDD/Download]
+
+#咪咕音乐
+[咪咕音乐|歌曲|根路径/12530/download]
+
+#酷安
+[酷安|下载|根路径/Android/data/com.coolapk.market/files/Download]
+
+#百度
+[百度|下载|应用数据路径/com.baidu.searchbox/files/downloads]
+
+#搞机助手
+[搞机助手|配置文件|应用数据路径/Han.GJZS/files/Configuration_File]
+
+#安卓壁纸
+[安卓壁纸|下载|应用数据路径/com.androidesk/files/androidesk]
+
+#悟饭游戏厅
+[悟饭游戏厅|下载|应用数据路径/com.join.android.app.mgsim.wufun/files/wufan91]
+
+#葫芦侠
+[葫芦侠|下载|根路径/应用数据路径/com.huluxia.gametools/downloads]
+
+#爱吾游戏宝盒
+[爱吾游戏宝盒|下载|根路径/25game/apps]
 "
 echolog() { echo "$@" >>"$ANDROIDH/在线规则日志.log"; }
 [ -f "$ANDROIDH/在线规则日志.log" ] && mv "$ANDROIDH/在线规则日志.log" "$ANDROIDH/在线规则日志.log.old"
