@@ -1,4 +1,4 @@
-ONLINEVERSION=202205290
+ONLINEVERSION=202205291
 ONLINENAME="2022-05-29-1"
 RULES="
 #贡献在线规则，联系：
@@ -16,8 +16,8 @@ RULES="
 [QQ|下载|应用数据路径/com.tencent.mobileqq/Tencent/QQfile_recv]
 [QQ|下载2|根路径/Tencent/QQfile_recv]
 [QQ|图片|应用数据路径/com.tencent.mobileqq/Tencent/QQ_Images]
-[QQ|保存图片|根路径/tencent/qq_images]
-[QQ|保存视频|根路径/tencent/QQ_Video]
+[QQ|图片2|根路径/tencent/qq_images]
+[QQ|视频|根路径/tencent/QQ_Video]
 
 #TIM 贡献：845158117
 [TIM|下载|根路径/Tencent/TIMfile_recv]
@@ -64,7 +64,6 @@ RULES="
 [浏览器|QQ|根路径/QQBrowser]
 [浏览器|360|根路径/360Browser/download]
 [浏览器|360极速|根路径/360LiteBrowser/download]
-[浏览器|QQ极速版|根路径/tencent/QQfile_recv]
 
 #网易云
 [网易云音乐|歌曲|根路径/netease/cloudmusic/Music]
