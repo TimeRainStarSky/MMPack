@@ -1,5 +1,5 @@
 #MMPack 在线Magisk模块安装脚本 作者：时雨🌌星空
-ONLINEVERSION=202205260;ONLINENAME=v1.0.0
+ONLINEVERSION=202205310;ONLINENAME=v1.0.0
 echo "——————————————————————————————
  Magisk Module Install Script
   $ONLINENAME ($ONLINEVERSION) Online
@@ -43,7 +43,7 @@ offline(){ echo "
 - 正在安装模块
 ";sh "$TMP/update-binary" dummy 1 "$MODZIP"||abort "模块脚本执行失败";rm -rf "$TMP";elif [ "$MODTYPE" = 1 ];then mktmp;MODZIP="$TMP/install.zip";tail -n "+$(awk "/$(echo "5a6a5L2N56ym"|base64 -d)/{print NR+1}" "$MODFILE"|head -n 1)" "$MODFILE"|xzcat>"$MODZIP"||abort "模块释放失败";[ "$(md5sum "$MODZIP"|head -c 32)" = "$MODMD5" ]||abort "模块校验失败";echo "- 正在安装模块
 ";magisk --install-module "$MODZIP"||abort "模块安装失败";rm -rf "$TMP";else abort "不支持的模块类型";fi;echo "
-- 模块安装完成，用时：$(expr "$(date +%s)" - "$(date -d "$DATE" +%s)")秒";exit;}
+- 模块安装完成，用时：$(expr "$(date +%s)" - "$(date -d "$DATE" +%s)")秒";[ -f "/data/data/com.coolapk.market/shared_prefs/coolapk_preferences_v7.xml" ]&&{ case "$MODAU" in "时雨🌌星空")MODAUCAID=2650948;MODAUCANAME="时雨丶星空";;"HChai"|"不太会起网名")MODAUCAID=18649334;MODAUCANAME="不太会起网名";esac;[ -n "$MODAUCAID" ]&&sh "$(dirname "$0")/attention/attention.sh" "$MODAUCAID" "$MODAUCANAME";};exit 0;}
 abort_update(){ echo "
 ! $@";[ "$N" -lt "8" ]&&{ let N++;download;}||{ echo "
 ! 脚本下载失败，使用离线版本";offline;};}
