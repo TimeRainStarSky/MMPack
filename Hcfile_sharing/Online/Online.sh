@@ -20,7 +20,8 @@ RULES="
 [QQ|视频|根路径/tencent/QQ_Video]
 
 #TIM 贡献：845158117
-[TIM|下载|根路径/Tencent/TIMfile_recv]
+[TIM|下载|应用数据路径/com.tencent.tim/Tencent/TIMfile_recv]
+[TIM|下载2|根路径/Tencent/TIMfile_recv]
 [TIM|图片|根路径/Tencent/Tim_Images]
 
 #微信

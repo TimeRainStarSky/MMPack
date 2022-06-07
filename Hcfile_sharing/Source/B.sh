@@ -29,7 +29,7 @@ grep "用户配置：" "$CONF" >/dev/null || abort "找不到用户配置"
 	UMOUNTX="$(mount | grep "$USBPATH" | cut -d ' ' -f3)"
 	[ "$UMOUNTX" != "" ] && echo "$UMOUNTX" | xargs umount
 } || mkdir -p "$DATAMEDIA/$USBPATH"
-[ "$NOMEDIA" = "关闭" ] && touch "$DATAMEDIA/$USBPATH/.nomedia" || { [ -f "$DATAMEDIA/$USBPATH/.nomedia" ] && rm -rf "$DATAMEDIA/$USBPATH/.nomedia"; }
+[ "$NOMEDIA" = "关闭" ] && { [ -f "$DATAMEDIA/$USBPATH/.nomedia" ] || touch "$DATAMEDIA/$USBPATH/.nomedia"; } || { [ -f "$DATAMEDIA/$USBPATH/.nomedia" ] && rm -rf "$DATAMEDIA/$USBPATH/.nomedia"; }
 echo "$(date '+%F %X') [卖小女孩的火柴]" >"$ANDROIDH/挂载日志.log"
 mount_file() {
 	tail -n "+$(awk "/用户配置：/{print NR+2}" "$CONF" | head -n 1)" "$CONF" | while read LINE; do
