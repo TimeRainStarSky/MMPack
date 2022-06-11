@@ -5,7 +5,7 @@ $R Shell$Y Runtime$G Pack$C Tools$O
      ${G}作者：${C}时雨🌌星空$O";[ -d "$1" ]&&INPUT="$(realpath "$1")"&&BASEINPUT="$(basename "$INPUT")"||abort "输入文件夹不存在";[ -n "$2" ]&&OUTPUT="$(realpath "$2")"||abort "输出文件不存在";echo "
 $Y- 正在生成校验脚本$O
 ";[ -f "$INPUT/verify.sh" ]&&rm -rf "$INPUT/verify.sh";cd "$INPUT"&&FIND="$(find * ! -type d)";echo "$FIND
-"|while read VFILE;do [ -f "$VFILE" ]||{ echo -n 'VERIFY="$1";verify(){ [ "$(md5sum "$VERIFY/$1"|head -c 32)" = "$2" ]&&echo "校验成功 $1"||{ echo "校验失败 $1";rm -rf "$VERIFY";exit 1;};}'"$VERIFY"';rm -rf "$0"'>"$INPUT/verify.sh";break;};MD5SUM="$(md5sum "$VFILE"|head -c 32)";echo "$MD5SUM $C$VFILE$O";VERIFY="$VERIFY;verify '$VFILE' '$MD5SUM'";done;echo "
+"|while read VFILE;do [ -f "$VFILE" ]||{ echo -n 'VERIFY="$1";verify(){ [ "$(md5sum "$VERIFY/$1"|head -c 32)" = "$2" ]&&echo "校验成功 $1"||{ echo "校验失败 $1";exit 1;};}'"$VERIFY"';rm -rf "$0"'>"$INPUT/verify.sh";break;};MD5SUM="$(md5sum "$VFILE"|head -c 32)";echo "$MD5SUM $C$VFILE$O";VERIFY="$VERIFY;verify '$VFILE' '$MD5SUM'";done;echo "
 $Y- 正在打包为自释放脚本$O
 ";echo '#运行环境已经过编译，需要源代码请联系作者：时雨🌌星空
 R="'"$R"'";G="'"$G"'";Y="'"$Y"'";C="'"$C"'";B="'"$B"'";O="'"$O"'"
@@ -19,10 +19,13 @@ $Y- 正在释放运行环境$O
 $Y- 正在校验运行环境$O
 "&&sh "$DIR/verify.sh" "$DIR";then RUNTIME="$DIR";echo "
 $Y- 正在配置运行环境$O
-";setcmd(){ "$RUNTIME/$@"|tr " " "\n"|while read i;do [ -z "$i" ]&&continue;ln -sf "$1" "$RUNTIME/$i";done||abort "找不到$1，请安装运行环境后重试";};setcmd busybox --list;setcmd toybox;ls "$RUNTIME">"$RUNTIME/verify";export PATH="$RUNTIME:$PATH";export LD_LIBRARY_PATH="$RUNTIME:$LD_LIBRARY_PATH";[ -d "$RUNTIME" ]&&[ -f "$RUNTIME/verify" ]&&[ "$(ls "$RUNTIME")" = "$(cat "$RUNTIME/verify")" ]||abort "运行环境验证失败";echo "$B命令：$C$PATH$O
+";setcmd(){ "$RUNTIME/$@"|tr " " "\n"|while read i;do [ -z "$i" ]&&continue;ln -sf "$1" "$RUNTIME/$i";echo -n "$i ";done||abort "找不到$1，请安装运行环境后重试";};setcmd busybox --list;setcmd toybox;ls "$RUNTIME/Extra"|while read i;do mv -f "$RUNTIME/Extra/$i" "$RUNTIME";echo -n "$i ";done;rm -rf "$RUNTIME/Extra";ls "$RUNTIME">"$RUNTIME/verify";echo "
+
+$Y- 正在检查运行环境$O";export PATH="$RUNTIME:$PATH";export LD_LIBRARY_PATH="$RUNTIME:$LD_LIBRARY_PATH";[ -d "$RUNTIME" ]&&[ -f "$RUNTIME/verify" ]&&[ "$(ls "$RUNTIME")" = "$(cat "$RUNTIME/verify")" ]||abort "运行环境验证失败";echo "
+$B命令：$C$PATH$O
 $B依赖：$C$LD_LIBRARY_PATH$O
 $B数量：$C$(ls "$RUNTIME"|wc -l)$O
-${Y}BusyBox$O
+${Y}busybox$O
 $B路径：$C$(command -v busybox||echo "$R找不到")$O
 $B版本：$C$({ busybox||echo "$R执行失败";}|head -n 1)$O
 ${Y}toybox$O
@@ -30,7 +33,16 @@ $B路径：$C$(command -v toybox||echo "$R找不到")$O
 $B版本：$C$(toybox --version||echo "$R执行失败")$O
 ${Y}curl$O
 $B路径：$C$(command -v curl||echo "$R找不到")$O
-$B版本：$C$({ curl --version||echo "$R执行失败"|busybox||echo "$R执行失败";}|head -n 1)$O
+$B版本：$C$({ curl --version||echo "$R执行失败";}|head -n 1)$O
+${Y}tar$O
+$B路径：$C$(command -v tar||echo "$R找不到")$O
+$B版本：$C$({ tar --version||echo "$R执行失败";}|head -n 1)$O
+${Y}zip$O
+$B路径：$C$(command -v zip||echo "$R找不到")$O
+$B版本：$C$({ zip --version||echo "$R执行失败";}|head -n 2|tail -n 1)$O
+${Y}xz$O
+$B路径：$C$(command -v xz||echo "$R找不到")$O
+$B版本：$C$({ xz --version||echo "$R执行失败"|busybox||echo "$R执行失败";}|head -n 1)$O
 
 $G- 运行环境配置完成$O";elif [ "$OUTPUTED" != 1 ];then output_file;check_exec;else abort "运行环境释放失败";fi;};check_exec;exit;定位符'>"$OUTPUT"||abort "脚本打包失败";cd "$INPUT";tar -c *|gzip -9cv>>"$OUTPUT"||abort "脚本打包失败";echo "
 $G- 打包完成$O"
