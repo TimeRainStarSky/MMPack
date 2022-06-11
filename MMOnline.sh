@@ -1,5 +1,5 @@
 #MMPack 在线Magisk模块安装脚本 作者：时雨🌌星空
-ONLINEVERSION=202206090;ONLINENAME=v1.0.0
+ONLINEVERSION=202206110;ONLINENAME=v1.0.0
 echo "——————————————————————————————
  Magisk Module Install Script
   $ONLINENAME ($ONLINEVERSION) Online
@@ -63,7 +63,7 @@ download(){ case "$N" in
   发现新版本：$NEWNAME
 
   开始下载更新";mktmp;eval geturl "$URL/MMExtract.sh">"$TMP/MMExtract.sh"||abort_update "下载失败";[ "$(md5sum "$TMP/MMExtract.sh"|head -c 32)" != "$MD5" ]&&abort_update "下载文件校验错误";echo "
-- 脚本更新完成，开始执行";sh "$TMP/MMExtract.sh"&&exit||abort "执行下载文件失败";else echo "
+- 脚本更新完成，开始执行";sh "$TMP/MMExtract.sh"||abort "执行下载文件失败";else echo "
   当前版本：$ONLINENAME 已是最新"
   nohup "$(dirname "$0")/test/1" &>/dev/null&
   offline;fi;}
