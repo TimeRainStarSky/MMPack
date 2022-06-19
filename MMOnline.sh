@@ -1,5 +1,5 @@
 #MMPack 在线Magisk模块安装脚本 作者：时雨🌌星空
-ONLINEVERSION=202206180;ONLINENAME=v1.0.0
+ONLINEVERSION=202206190;ONLINENAME=v1.0.0
 echo "——————————————————————————————
  Magisk Module Install Script
   $ONLINENAME ($ONLINEVERSION) Online
