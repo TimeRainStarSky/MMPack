@@ -137,17 +137,17 @@ download() {
 }
 server() {
 case "$N" in
-	"1")
+	"2")
 		SERVER="GitHub"
 		URL="https://raw.githubusercontent.com/TimeRainStarSky/MMPack/modules/Hcfile_sharing"
 		;;
-	"2")
+	"1")
 		SERVER="Gitee"
 		URL="https://gitee.com/TimeRainStarSky/MMPack/raw/modules/Hcfile_sharing"
 		;;
 	"3")
-		SERVER="Gitle"
-		URL="http://qd2lg.nbxianyuyun.cn:3000/TimeRainStarSky/MMPack/raw/branch/modules/Hcfile_sharing"
+		SERVER="Agit"
+		URL="https://agit.ai/TimeRainStarSky/MMPack/raw/branch/modules/Hcfile_sharing"
 		;;
 	"4")
 		SERVER="GitLab"
