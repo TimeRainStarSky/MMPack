@@ -9,7 +9,7 @@ $Y- 正在生成校验脚本$O
 $Y- 正在打包为自释放脚本$O
 ";echo '#运行环境已经过编译，需要源代码请联系作者：时雨🌌星空
 R="'"$R"'";G="'"$G"'";Y="'"$Y"'";C="'"$C"'";B="'"$B"'";O="'"$O"'"
-if [ "$(id -u)" != 0 ];then echo "$Y- 正在获取root权限$O";su -c "sh \"$0\" \"$@\"";exit;fi;echo "$B————————————————————————————————
+[ "$(id -u)" = 0 ]||{ echo "$Y- 正在获取root权限$O";exec su -c "sh \"$0\" \"$@\"";};echo "$B————————————————————————————————
 $R Shell$Y Runtime$G Configure$C Script$O
 ————————————————————————————————
         ${G}作者：${C}时雨🌌星空$O";DIR="/data/adb/TimeRainStarSky/'"$BASEINPUT"'";FILE="$(realpath "$0")";cd "$(dirname "$FILE")";abort(){ rm -rf "$DIR";echo "
