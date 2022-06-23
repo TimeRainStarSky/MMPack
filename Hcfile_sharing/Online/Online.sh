@@ -292,7 +292,7 @@ cd "$(dirname "$0")"
 FILE="$(realpath "U.sh")"
 if command -v curl >/dev/null; then alias geturl="curl -L --retry 2 --connect-timeout 5 -O"; elif command -v wget >/dev/null; then alias geturl="wget -T 5 --no-check-certificate"; else
 	echolog "
-!  ，使用离线版本"
+!  找不到更新命令，使用离线版本"
 	offline
 fi
 N=1
