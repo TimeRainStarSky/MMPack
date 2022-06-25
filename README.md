@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+# Magisk 模块 打包脚本
+[![Stars](https://img.shields.io/github/stars/TimeRainStarSky/MMPack?color=yellow&label=收藏)](https://github.com/TimeRainStarSky/MMPack/stargazers)
+[![Downloads](https://img.shields.io/github/downloads/TimeRainStarSky/MMPack/total?color=blue&label=下载)](https://cdn.jsdelivr.net/gh/TimeRainStarSky/MMPack@main/MMControl.sh)
+[![Releases](https://img.shields.io/github/v/release/TimeRainStarSky/MMPack?color=green&label=发布版本)](https://github.com/TimeRainStarSky/MMPack/releases/latest)  
+[![访问量](https://profile-counter.glitch.me/TimeRainStarSky-MMPack/count.svg)](https://timerainstarsky.github.io/MMPack)
 
-You can use the [editor on GitHub](https://github.com/TimeRainStarSky/Magisk_Module-Pack_Script/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## 使用教程
+1. 准备：  
+① 脚本 [MMControl.sh](https://cdn.jsdelivr.net/gh/TimeRainStarSky/MMPack@main/MMControl.sh) 文件  
+② 终端：[MT管理器](https://www.coolapk.com/apk/bin.mt.plus) | [ZeroTermux](https://github.com/hanxinhao000/ZeroTermux)  
+③ Magisk 模块 文件(夹)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+2. 运行脚本：  
+① MT管理器：打开方式 ➞ Linux脚本 ➞ 执行  
+[![MT管理器运行脚本.gif](https://cdn.jsdelivr.net/gh/TimeRainStarSky/Boot_Tools@main/Guide/MT管理器运行脚本.gif)](https://www.coolapk.com/apk/bin.mt.plus)  
+② 终端：输入 sh [脚本路径] 并 回车 执行
+[![终端运行脚本.gif](https://cdn.jsdelivr.net/gh/TimeRainStarSky/Boot_Tools@main/Guide/终端运行脚本.gif)](https://github.com/hanxinhao000/ZeroTermux)
 
-### Markdown
+## 使用说明
+- 咕咕咕
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/TimeRainStarSky/Magisk_Module-Pack_Script/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## 联系方式
+- QQ群组：[211414032](https://jq.qq.com/?k=QU1xGLEB)
+### 时雨🌌星空
+- GitHub：[TimeRainStarSky](https://github.com/TimeRainStarSky)
+- 酷安：[时雨丶星空](http://www.coolapk.com/u/2650948)
+- QQ：[2536554304](https://qm.qq.com/cgi-bin/qm/qr?k=x8LtlP8vwZs7qLwmsbCsyLoAHy7Et1Pj)
+- Telegram：[TimeRainStarSky](https://t.me/TimeRainStarSky)
