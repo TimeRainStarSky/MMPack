@@ -42,7 +42,7 @@ $B路径：$C$(command -v zip||echo "$R找不到")$O
 $B版本：$C$({ zip --version||echo "$R执行失败";}|head -n 2|tail -n 1)$O
 ${Y}xz$O
 $B路径：$C$(command -v xz||echo "$R找不到")$O
-$B版本：$C$({ xz --version||echo "$R执行失败"|busybox||echo "$R执行失败";}|head -n 1)$O
+$B版本：$C$({ xz --version||echo "$R执行失败";}|head -n 1)$O
 
 $G- 运行环境配置完成$O";elif [ "$OUTPUTED" != 1 ];then output_file;check_exec;else abort "运行环境释放失败";fi;};check_exec;exit;定位符'>"$OUTPUT"||abort "脚本打包失败";cd "$INPUT";tar -c *|gzip -9cv>>"$OUTPUT"||abort "脚本打包失败";echo -n "name=v1.0.0
 version=$(date '+%4Y%m%d')0
