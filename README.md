@@ -26,3 +26,7 @@
 - 酷安：[时雨丶星空](http://www.coolapk.com/u/2650948)
 - QQ：[2536554304](https://qm.qq.com/cgi-bin/qm/qr?k=x8LtlP8vwZs7qLwmsbCsyLoAHy7Et1Pj)
 - Telegram：[TimeRainStarSky](https://t.me/TimeRainStarSky)
+
+## 赞助支持
+- 爱发电：<https://afdian.net/@TimeRainStarSky>
+- Partme：<https://partme.com/TimeRainStarSky>
