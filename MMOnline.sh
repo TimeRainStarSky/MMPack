@@ -1,5 +1,5 @@
 #MMPack 在线Magisk模块安装脚本 作者：时雨🌌星空
-ONLINEVERSION=202207290;ONLINENAME=v1.0.0
+ONLINEVERSION=202208240;ONLINENAME=v1.0.0
 echo "——————————————————————————————
  Magisk Module Install Script
   $ONLINENAME ($ONLINEVERSION) Online
@@ -53,7 +53,7 @@ abort_update(){ echo "
 ! $@";[ "$N" -lt 10 ]&&{ let N++;download;}||{ echo "
 ! 脚本下载失败，使用离线版本";offline;};}
 download(){ case "$N" in
-    2)SERVER="GitHub";URL="https://raw.githubusercontent.com/TimeRainStarSky/MMPack/online";;
+    2)SERVER="GitHub";URL="https://github.com/TimeRainStarSky/MMPack/raw/online";;
     1)SERVER="Gitee";URL="https://gitee.com/TimeRainStarSky/MMPack/raw/online";;
     3)SERVER="Agit";URL="https://agit.ai/TimeRainStarSky/MMPack/raw/branch/online";;
     4)SERVER="GitLab";URL="https://gitlab.com/TimeRainStarSky/MMPack/raw/online";;
