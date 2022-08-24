@@ -1,7 +1,7 @@
 # Magisk 模块 打包脚本
 [![Stars](https://img.shields.io/github/stars/TimeRainStarSky/MMPack?color=yellow&label=收藏)](https://github.com/TimeRainStarSky/MMPack/stargazers)
 [![Downloads](https://img.shields.io/github/downloads/TimeRainStarSky/MMPack/total?color=blue&label=下载)](https://cdn.jsdelivr.net/gh/TimeRainStarSky/MMPack@main/MMControl.sh)
-[![Releases](https://img.shields.io/github/v/release/TimeRainStarSky/MMPack?color=green&label=发布版本)](https://github.com/TimeRainStarSky/MMPack/releases/latest)  
+[![Releases](https://img.shields.io/github/v/release/TimeRainStarSky/MMPack?color=green&label=发行版)](https://github.com/TimeRainStarSky/MMPack/releases/latest)  
 [![访问量](https://profile-counter.glitch.me/TimeRainStarSky-MMPack/count.svg)](https://timerainstarsky.github.io/MMPack)
 
 ## 使用教程
