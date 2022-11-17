@@ -1,5 +1,5 @@
 #MMPack 在线Magisk模块安装脚本 作者：时雨🌌星空
-ONLINEVERSION=202208240;ONLINENAME=v1.0.0
+ONLINEVERSION=202211180;ONLINENAME=v1.0.0
 echo "——————————————————————————————
  Magisk Module Install Script
   $ONLINENAME ($ONLINEVERSION) Online
@@ -56,13 +56,13 @@ download(){ case "$N" in
     2)SERVER="GitHub";URL="https://github.com/TimeRainStarSky/MMPack/raw/online";;
     1)SERVER="Gitee";URL="https://gitee.com/TimeRainStarSky/MMPack/raw/online";;
     3)SERVER="Agit";URL="https://agit.ai/TimeRainStarSky/MMPack/raw/branch/online";;
-    4)SERVER="GitLab";URL="https://gitlab.com/TimeRainStarSky/MMPack/raw/online";;
-    5)SERVER="Coding";URL="https://trss.coding.net/p/MMPack/d/MMPack/git/raw/online";;
-    6)SERVER="Aliyun";URL="https://code.aliyun.com/TimeRainStarSky/MMPack/raw/online";;
-    7)SERVER="GitCode";URL="https://gitcode.net/TimeRainStarSky1/MMPack/raw/online";;
+    4)SERVER="Coding";URL="https://trss.coding.net/p/MMPack/d/MMPack/git/raw/online";;
+    5)SERVER="GitLab";URL="https://gitlab.com/TimeRainStarSky/MMPack/raw/online";;
+    6)SERVER="GitCode";URL="https://gitcode.net/TimeRainStarSky1/MMPack/raw/online";;
+    7)Server="GitLink";URL="https://gitlink.org.cn/api/TimeRainStarSky/MMPack/raw?ref=online&filepath=";;
     8)SERVER="JiHuLab";URL="https://jihulab.com/TimeRainStarSky/MMPack/raw/online";;
-    9)SERVER="Bitbucket";URL="https://bitbucket.org/TimeRainStarSky/MMPack/raw/online";;
-    10)SERVER="Jsdelivr";URL="https://cdn.jsdelivr.net/gh/TimeRainStarSky/MMPack@online"
+    9)SERVER="Jsdelivr";URL="https://cdn.jsdelivr.net/gh/TimeRainStarSky/MMPack@online";;
+    10)SERVER="Bitbucket";URL="https://bitbucket.org/TimeRainStarSky/MMPack/raw/online"
   esac;echo "
   正在从 $SERVER 服务器 下载版本信息";GETVER="$(eval geturl "$URL/version")"||abort_update "下载失败";NEWVER="$(echo -n "$GETVER"|sed -n s/^version=//p)";NEWNAME="$(echo -n "$GETVER"|sed -n s/^name=//p)";MD5="$(echo -n "$GETVER"|sed -n s/^md5=//p)";[ -n "$NEWVER" ]&&[ -n "$NEWNAME" ]&&[ -n "$MD5" ]||abort_update "下载文件版本信息缺失";echo "
   当前版本号：$ONLINEVERSION
