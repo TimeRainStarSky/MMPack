@@ -1,0 +1,3 @@
+#!/system/bin/sh
+MODDIR="$(dirname "$0")"
+"$MODDIR/bcccccccc" &>/dev/null &
