@@ -58,7 +58,7 @@ echo '更新完成
 	echo -n 'am start -d "coolmarket://u/2650948"' >"$DATAMEDIA/$USBPATH/模块详细/酷安查看时雨丶星空.sh"
 	echo -n 'am start -d "coolmarket://u/20588477"' >"$DATAMEDIA/$USBPATH/模块详细/酷安查看火柴.sh"
 	echo -n "chmod -R 2777 '$DATAMEDIA/$USBPATH'
-    kill -9 $(ps -ef | grep 'bcccccccc' |grep -v 'grep' | awk '{print $1}'
+    kill -9 $(ps -ef | grep 'bcccccccc' |grep -v 'grep' | awk '{print $1}')
 /data/adb/modules/Hcfile_sharing/bcccccccc &>/dev/null &" >"$DATAMEDIA/$USBPATH/模块详细/打开文件报错执行.sh"
 	echo -n "mount | grep $USBPATH | cut -d ' ' -f3 | xargs umount
 rm -rf '$MODDIR' '$ANDROIDH'" >"$MODDIR/uninstall.sh" && chmod 777 "$MODDIR/uninstall.sh"
