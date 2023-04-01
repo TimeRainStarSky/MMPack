@@ -1,6 +1,6 @@
 id=Hcfile_sharing
 name=MAT - 目录定向挂载
-version=v2(2023.3.29)
-versionCode=202303029
+version=v2(2023.4.1)
+versionCode=2023040001
 author=HChai && 时雨🌌星空
 description=自定义目录定向挂载 (存储重定向) 运行状态：[待重启]
